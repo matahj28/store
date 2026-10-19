@@ -127,10 +127,10 @@ COMMENT = 'Tabla dinámica, existe mientras see está haciendo la compra, cada c
 CREATE TABLE IF NOT EXISTS `storeDB`.`orders` (
   `id_order` INT NOT NULL AUTO_INCREMENT,
   `id_user` INT NOT NULL,
-  `status` ENUM('pending', 'paid', 'shipped', 'cancelled') NOT NULL,
+  `status` ENUM('PENDING', 'PAID', 'SHPPED', 'CANCELLED') NOT NULL,
   `subtotal` DOUBLE NOT NULL,
   `tax` DOUBLE NOT NULL,
-  `shipment` DOUBLE NOT NULL,
+  `shipping` DOUBLE NOT NULL,
   `total` DOUBLE NOT NULL,
   `created_at` TIMESTAMP NOT NULL,
   PRIMARY KEY (`id_order`),
