@@ -3,6 +3,7 @@ package mx.uam.cua.store.entity;
 import jakarta.persistence.*;
 import mx.uam.cua.store.dto.OrderDTO;
 import mx.uam.cua.store.enums.Status;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -17,6 +18,7 @@ public class Order {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Status status;
+
     @Column(nullable = false)
     private double subtotal;
     @Column(nullable = false)
@@ -25,6 +27,8 @@ public class Order {
     private double shipping;
     @Column(nullable = false)
     private double total;
+
+    @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 

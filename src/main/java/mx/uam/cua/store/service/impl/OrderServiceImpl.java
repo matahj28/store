@@ -24,8 +24,11 @@ public class OrderServiceImpl implements OrderSevice {
 
     @Override
     public List<OrderDTO> findAll() {
+
         List<Order>  orders = orderRepository.findAll();
+
         List<OrderDTO>  orderDTOs = new ArrayList<>();
+
         for (Order order : orders) {
             orderDTOs.add(orderMapper.toOrderDTO(order));
         }
