@@ -40,4 +40,18 @@ public class UserServiceImpl implements UserService {
 
         return userDTOs;
     }
+
+    @Override
+    public List<UserDTO> findByLastName(String lastName) {
+        List<User> users= userRespository.findByLastName(lastName);
+
+        List<UserDTO> userDTOs = new ArrayList<>();
+
+        for (User user : users) {
+            userDTOs.add(userMapper.toUserDTO(user));
+        }
+        return userDTOs;
+    }
+
+
 }
