@@ -2,6 +2,7 @@ package mx.uam.cua.store.mapper;
 
 import mx.uam.cua.store.dto.UserDTO;
 import mx.uam.cua.store.entity.User;
+import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 
 public interface UserMapper {
