@@ -12,6 +12,6 @@ public class InvoiceDTO {
     private String billingAddress;
     LocalDateTime issuedAt;
 
-    private OrderDTO orderDTO;
+    private OrderDTO order;
 }
 
