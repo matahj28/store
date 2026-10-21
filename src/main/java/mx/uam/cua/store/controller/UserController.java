@@ -4,6 +4,7 @@ import mx.uam.cua.store.dto.UserDTO;
 import mx.uam.cua.store.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -20,8 +21,22 @@ public class UserController {
         return userService.save(userDTO);
     }
 
-    @RequestMapping("/users")
-    public List<UserDTO> getUsers(){
-        return userService.findAll();
+//    @GetMapping("/users")
+//    public List<UserDTO> getUsers(){
+//        return userService.findAll();
+//    }
+
+    @GetMapping("/users")
+    public List<UserDTO> getUsers(@RequestParam(required = false) String lastName){
+
+        List<UserDTO> userDTOs;
+
+        if(lastName != null && !lastName.isEmpty()){
+            userDTOs = userService.findByLastName(lastName);
+        } else {
+            userDTOs = userService.findAll();
+        }
+
+        return userDTOs;
     }
 }
