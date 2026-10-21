@@ -14,7 +14,7 @@ public class OrderDTO {
     private double total;
     private LocalDateTime createdAt;
 
-    private User user;
+    private UserDTO userDTO;
 
     public String getIdOrder() {
         return idOrder;
@@ -72,11 +72,11 @@ public class OrderDTO {
         this.createdAt = createdAt;
     }
 
-    public User getUser() {
-        return user;
+    public UserDTO getUserDTO() {
+        return userDTO;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserDTO(UserDTO userDTO) {
+        this.userDTO = userDTO;
     }
 }
